@@ -25,6 +25,13 @@ COPY --from=builder /app/src ./src
 COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/scripts ./scripts
 
+# Include seed world data and entrypoint
+COPY --from=builder /app/world ./world-seed
+COPY --from=builder /app/scripts/entrypoint.sh /usr/local/bin/entrypoint
+RUN chmod +x /usr/local/bin/entrypoint
+
+ENTRYPOINT ["entrypoint"]
+
 # Set build argument and environment variable
 ARG COMMIT_HASH=local
 ENV COMMIT_HASH=${COMMIT_HASH:-local} \
