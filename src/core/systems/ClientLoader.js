@@ -222,6 +222,7 @@ export class ClientLoader extends System {
         const code = await file.text()
         const script = this.world.scripts.evaluate(code)
         this.results.set(key, script)
+        console.log(`[ClientLoader] Cached script with key: ${key}`)
         return script
       }
       if (type === 'audio') {

@@ -6,7 +6,7 @@ import { ServerNetwork } from './systems/ServerNetwork'
 import { ServerLoader } from './systems/ServerLoader'
 import { ServerEnvironment } from './systems/ServerEnvironment'
 import { ServerMonitor } from './systems/ServerMonitor'
-import { LocalApps } from '../server/systems/LocalApps'
+import { LocalApps } from './systems/LocalApps'
 
 export function createServerWorld() {
   const world = new World()

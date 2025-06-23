@@ -1,5 +1,5 @@
 console.log('Crash Block app loaded!')
 
-app.traverse(node => {
-  console.log(node)
+app.on('update', delta => {
+  app.rotation.y += delta * 5
 })
